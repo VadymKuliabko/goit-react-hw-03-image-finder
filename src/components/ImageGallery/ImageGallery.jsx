@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
-import './ImageGallery.css';
+import styles from './ImageGallery.css';
 
 const ImageGallery = ({ gallery, onModalShow }) => {
   return (

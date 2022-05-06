@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import './ImageGalleryItem.css';
+import styles from './ImageGalleryItem.css';
 
 const ImageGalleryItem = ({ preview, largeImage, tags, onModalShow }) => {
   return (

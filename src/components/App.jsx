@@ -5,7 +5,7 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import Button from './Button/Button';
 import Modal from './Modal/Modal';
 import { TailSpin } from 'react-loader-spinner';
-import './App.css';
+import styles from './App.css';
 
 export class App extends Component {
   state = {
@@ -46,16 +46,18 @@ export class App extends Component {
             this.setState(prevState => {
               return {
                 gallery: [...prevState.gallery, ...images],
-                isLoading: false,
+
                 currentHitsPerPage: hits.length,
               };
             });
           } else {
             alert(`По запросу ${searchImages} ничего не найдено.`);
-            this.setState({ isLoading: false });
           }
         })
-        .catch(error => this.setState({ error }));
+        .catch(error => this.setState({ error }))
+        .finally(() => {
+          this.setState({ isLoading: false });
+        });
     }
   }
 

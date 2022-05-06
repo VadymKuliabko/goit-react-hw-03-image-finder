@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import './SearchBar.css';
+import PropTypes from 'prop-types';
+import styles from './SearchBar.css';
 
 export default class SearchBar extends Component {
   state = {
@@ -20,6 +21,10 @@ export default class SearchBar extends Component {
 
     this.props.onSubmit(this.state.searchImages);
     this.setState({ searchImages: '' });
+  };
+
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
   };
 
   render() {
